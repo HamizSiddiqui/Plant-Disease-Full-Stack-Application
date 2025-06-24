@@ -1,70 +1,146 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 🌿 Plant Disease Detection Web App
 
-## Available Scripts
+A full-stack AI-powered web app to detect plant diseases from leaf images using a trained deep learning model. Built with **FastAPI** and **React**, and backed by **MongoDB** for storing predictions.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 📸 Upload plant leaf images
+- 🤖 Predicts disease using a trained TensorFlow CNN model
+- ✅ Shows prediction with confidence score
+- 🗃 Saves results in MongoDB Atlas
+- 🧠 Uses FastAPI for backend and React for frontend
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🧰 Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Layer       | Technology               |
+|-------------|---------------------------|
+| Frontend    | React, Bootstrap          |
+| Backend     | FastAPI (Python)          |
+| AI Model    | TensorFlow / Keras        |
+| Database    | MongoDB Atlas             |
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📁 Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+PLANT-DISEASE-PREDICT-APP/
+│
+├── fastapi/
+│   ├── main.py             # FastAPI server with prediction API
+│   ├── predict.py          # Image preprocessing & model prediction
+│   ├── mini_model.h5       # Trained CNN model
+│   ├── database.env        # MongoDB URI (not committed to GitHub)
+│   └── __pycache__/        # Python cache files
+│
+├── plant-disease-frontend/
+│   ├── public/             # Static assets
+│   ├── src/                # React components
+│   ├── package.json        # React dependencies
+│   ├── package-lock.json
+│
+├── venv/                   # Python virtual environment
+│
+├── .gitignore              # Git ignored files (like venv, node_modules, env)
+├── README.md               # You're reading it now
+└── 2025-06-21_06-00-03.mp4 # Optional demo video (not required)
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## ⚙️ Setup Instructions
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### ✅ 1. Clone the Repository
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone https://github.com/yourusername/PLANT-DISEASE-PREDICT-APP.git
+cd PLANT-DISEASE-PREDICT-APP
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### ✅ 2. Backend Setup (FastAPI)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+cd fastapi
+python -m venv venv
+source venv/bin/activate     # or venv\Scripts\activate on Windows
+pip install -r requirements.txt
+```
 
-## Learn More
+Create `database.env` in the `fastapi/` folder:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```env
+MONGO_URI=mongodb+srv://<username>:<password>@cluster-url/plant_db?retryWrites=true&w=majority
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Run the backend server:
 
-### Code Splitting
+```bash
+uvicorn main:app --reload
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### ✅ 3. Frontend Setup (React)
 
-### Analyzing the Bundle Size
+```bash
+cd ../plant-disease-frontend
+npm install
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 🔗 Running the App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Frontend: `http://localhost:3000/`
+- Backend API: `http://localhost:8000/predict/`
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🧪 Example Output
 
-### Deployment
+```
+Prediction: Potato Early Blight
+Confidence: 95.76%
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 📦 Requirements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**`requirements.txt` (for backend):**
+
+```txt
+fastapi
+uvicorn
+tensorflow
+pillow
+numpy
+python-dotenv
+pymongo
+```
+
+---
+
+## 📌 To-Do
+
+- [ ] Add progress/loading UI during prediction
+- [ ] Deploy backend (Render) & frontend (Vercel/Netlify)
+- [ ] Add image upload history view
+
+---
+
+## 📬 Author
+
+Made by **Hamiz Siddiqui**  
+📧 Email: hamiz@example.com  
+🔗 [LinkedIn](https://linkedin.com/in/yourusername)
+
+---
+
+## 🔐 Disclaimer
+
+Don’t expose `database.env` or `mini_model.h5` in public repos. Add them to `.gitignore`.
