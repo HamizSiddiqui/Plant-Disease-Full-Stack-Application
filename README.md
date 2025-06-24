@@ -135,12 +135,7 @@ pymongo
 
 ## 📬 Author
 
-Made by **Hamiz Siddiqui**  
-📧 Email: hamiz@example.com  
-🔗 [LinkedIn](https://linkedin.com/in/yourusername)
+Made by Hamiz Siddiqui
+📧 Email: m.hamizsiddiqui@gmail.com
+🔗 LinkedIn
 
----
-
-## 🔐 Disclaimer
-
-Don’t expose `database.env` or `mini_model.h5` in public repos. Add them to `.gitignore`.
