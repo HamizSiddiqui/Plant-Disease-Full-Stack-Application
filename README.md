@@ -135,7 +135,9 @@ pymongo
 
 ## 📬 Author
 
-Made by Hamiz Siddiqui
+Made by **M.Hamiz Siddiqui**
+
 📧 Email: m.hamizsiddiqui@gmail.com
-🔗 LinkedIn
+
+🔗 LinkedIn: www.linkedin.com/in/muhammad-hamiz-siddiqui-b21280294
 
